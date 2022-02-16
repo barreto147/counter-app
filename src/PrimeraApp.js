@@ -1,7 +1,8 @@
 const PrimeraApp = () => {
+  const saludo = "Hola mundo";
   return (
     <>
-      <h1>Hola Mundi</h1>
+      <h1>{saludo}</h1>
       <p>Este es un componente</p>
     </>
   );
