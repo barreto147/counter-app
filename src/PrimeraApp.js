@@ -1,5 +1,4 @@
-const PrimeraApp = () => {
-  const saludo = "Hola mundo";
+const PrimeraApp = ({ saludo = "Hola mundo" }) => {
   return (
     <>
       <h1>{saludo}</h1>
