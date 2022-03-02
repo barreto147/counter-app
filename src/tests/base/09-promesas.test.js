@@ -1,0 +1,22 @@
+import { getHeroeByIdAsync } from "../../base/09-promesas";
+import heroes from "../../data/heroes";
+
+describe("09-promesas Pruebas", () => {
+  test("getHeroeByIdAsync debe retornar un heroe async", (done) => {
+    const id = 1;
+
+    getHeroeByIdAsync(id).then((heroe) => {
+      expect(heroe).toBe(heroes[0]);
+      done();
+    });
+  });
+
+  test("getHeroeByIdAsync debe obtener un error si el heroe no existe", (done) => {
+    const id = 100;
+
+    getHeroeByIdAsync(id).catch((err) => {
+      expect(err).toBe("No se pudo encontrar el héroe");
+      done();
+    });
+  });
+});
