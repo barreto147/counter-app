@@ -25,14 +25,20 @@ describe("CounterApp Pruebas", () => {
   });
 
   test("Debe de decrementar con el boton -1", () => {
-    wraper.find("button").at(2).simulate("click"); //at define el indice del elemento, simulate simula el evento
+    wraper.find("button").at(2).simulate("click");
     const counterText = wraper.find("h2").text().trim();
     expect(counterText).toBe("9");
   });
 
   test("Debe de resetear con el boton reset", () => {
-    wraper.find("button").at(1).simulate("click"); //at define el indice del elemento, simulate simula el evento
+    const wraper = shallow(<CounterApp value={105} />);
+
+    wraper.find("button").at(0).simulate("click");
+    wraper.find("button").at(0).simulate("click");
+
+    wraper.find("button").at(1).simulate("click");
+
     const counterText = wraper.find("h2").text().trim();
-    expect(counterText).toBe("10");
+    expect(counterText).toBe("105");
   });
 });
